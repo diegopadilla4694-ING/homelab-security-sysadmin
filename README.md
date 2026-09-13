@@ -13,3 +13,32 @@ This project documents a hands-on **SysAdmin and Cybersecurity** lab consisting 
 - **ThinkPad with WSL2:** A client node and administration workstation for running tools, testing connections, automating tasks, and simulating operational and defensive scenarios.
 
 The lab enables the practice—in an isolated and reproducible manner—of service installation and hardening, remote administration via SSH, network verification, event monitoring, backups, and incident analysis. Activities are conducted exclusively on the lab's own systems, prioritizing the documentation of changes, configuration validation, and error recovery.
+
+
+## Documentation Navigation
+
+- **Network Architecture and Design:**
+  - [Network Topology and IP Map (netwok setup)](docs/architecture/network-setup.md)
+- **Security and Hardening:** *(In development)*
+- **Automation Scripts:** *(In development)*
+
+
+### Repository Structure
+
+```bash
+.
+├── LICENSE
+├── README.md
+├── docs/
+│   ├── architecture/
+│   │   ├── network-setup.md
+│   │   └── structure.md
+│   └── security/
+│       └── ssh-hardening.md
+└── src/
+    └── bash/
+        └── sys-info.sh
+```
+
+---
+*Documentation generated and maintained directly from the terminal
