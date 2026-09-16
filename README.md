@@ -1,4 +1,4 @@
-# <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-original.svg" width="38" height="38" valign="bottom"> Home Lab - SysAdmin & Ciberseguridad
+# <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-original.svg" width="38" height="38" valign="bottom"> Home Lab - SysAdmin & Cibersecurity
 
 
 ![Ubuntu Server](https://img.shields.io/badge/OS-Ubuntu_Server_22.04_LTS-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
