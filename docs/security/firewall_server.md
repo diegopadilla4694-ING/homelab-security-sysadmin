@@ -1,27 +1,45 @@
-# Hardening de Red: Configuración de UFW (Uncomplicated Firewall)
+# Network Hardening: UFW (Uncomplicated Firewall) Configuration
 
-## Resumen de la Configuración
-Se ha implementado una política de **seguridad defensiva predeterminada (Default Deny)** en el nodo servidor ASUS. Todo el tráfico entrante no autorizado es rechazado por defecto, limitando la superficie de ataque únicamente a los servicios esenciales.
+## Configuration Overview
+I implemented a **default-deny security policy** on the ASUS server node. All unauthorized incoming traffic is rejected by default, limiting the attack surface to essential services only.
 
 ---
 
-## Comandos Utilizados para la Configuración
+## Commands used to configure the server firewall
 
-Para aplicar este hardening en el servidor ASUS, se ejecutaron los siguientes comandos en orden:
+To secure the ASUS server, run the following commands in order:
 
 ```bash
-# 1. PERMITIR SSH PRIMERO (Crítico: evita perder el acceso remoto)
+# 1. ALLOW SSH FIRST (It is crucial to enable SSH to avoid losing access to the server from my laptop).
 sudo ufw allow 22/tcp
 
-# 2. ESTABLECER POLÍTICAS POR DEFECTO
-# Bloquear todo el tráfico entrante no solicitado
+# 2. SET DEFAULT POLICIES
+# Block all traffic coming from outside my network to secure the server.
 sudo ufw default deny incoming
 
-# Permitir que el servidor responda y navegue hacia afuera
+# This command allows the server to respond and initiate traffic to the external network.
 sudo ufw default allow outgoing
 
-# 3. HABILITAR EL SERVICIO DE FIREWALL
+# 3. ENABLE THE FIREWALL SERVICE.
 sudo ufw enable
 
-# 4. VERIFICAR EL ESTADO Y LAS REGLAS ACTIVAS
+# 4. CHECK AND QUERY THE FIREWALL.
 sudo ufw status verbose
+```
+
+
+## Automated Audit Script
+
+The script `src/bash/check-firewall.sh` was implemented to audit network security.
+
+### Functionality:
+1. Checks the status and active rules of the firewall (UFW) (`sudo ufw status verbose`).
+2. Displays listening TCP/UDP ports using the script's automated routine with the `sudo ss -tuln` command.
+
+### Script execution modes:
+```bash
+# Grant execution permissions (only the first time).
+chmod +x src/bash/check-firewall.sh
+
+# Run the script.
+./src/bash/check-firewall.sh
