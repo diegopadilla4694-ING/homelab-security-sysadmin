@@ -1,11 +1,11 @@
-# Network Hardening: UFW (Uncomplicated Firewall) Configuration
+# Network Hardening: UFW (Uncomplicated Firewall) Configuration.
 
-## Configuration Overview
+## Configuration Overview.
 I implemented a **default-deny security policy** on the ASUS server node. All unauthorized incoming traffic is rejected by default, limiting the attack surface to essential services only.
 
 ---
 
-## Commands used to configure the server firewall
+## Commands used to configure the server firewall.
 
 To secure the ASUS server, run the following commands in order:
 
@@ -28,7 +28,7 @@ sudo ufw status verbose
 ```
 
 
-## Automated Audit Script
+## Automated Audit Script.
 
 The script `src/bash/check-firewall.sh` was implemented to audit network security.
 
